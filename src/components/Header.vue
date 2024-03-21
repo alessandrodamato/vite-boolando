@@ -1,6 +1,37 @@
 <script>
   export default {
-    
+    data(){
+      return{
+        headerLeft:[
+          {
+            text: 'Donna',
+            link: '#',
+          },
+          {
+            text: 'Uomo',
+            link: '#',
+          },
+          {
+            text: 'Bambini',
+            link: '#',
+          },
+        ],
+        headerRight:[
+          {
+            icon: '<i class="fa-regular fa-user"></i>',
+            link: '#',
+          },
+          {
+            icon: '<i class="fa-regular fa-heart"></i>',
+            link: '#',
+          },
+          {
+            icon: '<i class="fa-solid fa-bag-shopping"></i>',
+            link: '#',
+          },
+        ]
+      }
+    }
   }
 </script>
 
@@ -12,9 +43,9 @@
 
       <nav class="menu categories">
         <ul class="d-flex">
-          <li><a href="#">Donna</a></li>
-          <li><a href="#">Uomo</a></li>
-          <li><a href="#">Bambini</a></li>
+          <li v-for="(item, index) in headerLeft" :key="index">
+            <a :href="item.link">{{ item.text }}</a>
+          </li>
         </ul>
       </nav>
 
@@ -24,9 +55,9 @@
 
       <nav class="menu">
         <ul class="d-flex">
-          <li><a href="#"><i class="fa-regular fa-user"></i></a></li>
-          <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
-          <li><a href="#"><i class="fa-solid fa-bag-shopping"></i></a></li>
+          <li v-for="(item, index) in headerRight" :key="index">
+            <a v-html="item.icon" :href="item.link"></a>
+          </li>
         </ul>
       </nav>
 

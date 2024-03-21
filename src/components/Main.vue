@@ -21,7 +21,7 @@
 @use './scss/partial/variables' as *; 
 
   main{
-    min-height: 100vh; ///////////////////////////////debug
+    min-height: calc(100vh - 220px); //////////////////////////////////debug
     .box{
       margin-top: 70px;
       justify-content: center;
