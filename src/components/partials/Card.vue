@@ -2,6 +2,26 @@
   export default {
     props:{
       card: Object
+    },
+
+    methods:{
+      discountCalc(){
+        let p = this.card.price;
+        let d;
+        let lowerPrice;
+
+        this.card.badges.forEach(badge => {
+          if (badge.type === 'discount') {
+            d = -parseInt(badge.value);
+          } else {
+            d = 0
+          }
+        });
+
+        lowerPrice = this.card.lowerPrice = p - (p * d) / 100;
+        return lowerPrice.toFixed(2)
+
+      }
     }
   }
 </script>
@@ -36,8 +56,8 @@
 
     <div class="product-name">{{ card.name }}</div>
 
-    <span class="f-size-small discounted-price">{{ card.price }} &euro;</span>
-
+    <span class="f-size-small lower-price">{{ discountCalc() }} &euro;</span>
+    
     <span class="f-size-small price">{{ card.price }} &euro;</span>
 
   </div>
@@ -95,7 +115,7 @@
     font-weight: bold;
     text-transform: uppercase;
   }
-  .discounted-price{
+  .lower-price{
     font-weight: 900;
     color: $color-discount;
   }

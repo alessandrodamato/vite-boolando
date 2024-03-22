@@ -44,7 +44,9 @@
 </script>
 
 <template>
+
   <footer>
+
     <div class="container d-flex box">
 
       <div class="d-flex footer-left">
@@ -68,7 +70,9 @@
       </div>
 
     </div>
+
   </footer>
+  
 </template>
 
 <style lang="scss" scoped>

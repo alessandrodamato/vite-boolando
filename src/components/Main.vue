@@ -10,10 +10,6 @@ import db from '../assets/data/db.json'
       return{
         db
       }
-    },
-
-    mounted(){
-      console.log(this.db.products);
     }
   }
 </script>
