@@ -1,6 +1,45 @@
 <script>
   export default {
-    
+    data(){
+      return{
+        footerLeft:[
+          {
+            text: 'Informazioni legali',
+            link: '#',
+          },
+          {
+            text: 'Informativa sulla privacy',
+            link: '#',
+          },
+          {
+            text: 'Diritto di recesso',
+            link: '#',
+          },
+        ],
+        footerRight:[
+          {
+            icon: '<i class="fa-brands fa-square-twitter"></i>',
+            link: '#',
+          },
+          {
+            icon: '<i class="fa-brands fa-square-facebook"></i>',
+            link: '#',
+          },
+          {
+            icon: '<i class="fa-brands fa-square-instagram"></i>',
+            link: '#',
+          },
+          {
+            icon: '<i class="fa-brands fa-square-pinterest"></i>',
+            link: '#',
+          },
+          {
+            icon: '<i class="fa-brands fa-square-youtube"></i>',
+            link: '#',
+          },
+        ]
+      }
+    }
   }
 </script>
 
@@ -13,9 +52,7 @@
 
         <nav>
           <ul class="d-flex f-size-small">
-            <li><a href="#">Informazioni legali</a></li>
-            <li><a href="#">Informativa sulla privacy</a></li>
-            <li><a href="#">Diritto di recesso</a></li>
+            <li v-for="(item, index) in footerLeft" :key="`fl-${index}`"><a :href="item.link">{{ item.text }}</a></li>
           </ul>
         </nav>
       </div>
@@ -25,11 +62,7 @@
 
         <nav>
           <ul class="d-flex">
-            <li><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-square-pinterest"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-square-youtube"></i></a></li>
+            <li v-for="(item, index) in footerRight" :key="`fr-${index}`"><a :href="item.link" v-html="item.icon"></a></li>
           </ul>
         </nav>
       </div>

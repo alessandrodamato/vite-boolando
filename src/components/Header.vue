@@ -55,7 +55,7 @@
 
       <nav class="menu">
         <ul class="d-flex">
-          <li v-for="(item, index) in headerRight" :key="index">
+          <li v-for="(item, index) in headerRight" :key="`b-${index}`">
             <a v-html="item.icon" :href="item.link"></a>
           </li>
         </ul>
