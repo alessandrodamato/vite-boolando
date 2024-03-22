@@ -24,7 +24,12 @@
         {{badge.value}}
         </div>
       </div>
-      <div class="favourite">&hearts;</div>
+      <div
+        class="favourite"
+        :class="{'active' : card.isInFavorites === true}"
+        @click="card.isInFavorites = !card.isInFavorites"
+        >&hearts;
+      </div>
     </div>
 
     <div class="f-size-small product-brand">{{ card.brand }}</div>
@@ -81,7 +86,7 @@
       padding: 8px 15px;
       font-size: 2rem;
       background-color: white;
-      &:hover{
+      &.active{
         color: $color-primary;
       }
     }
