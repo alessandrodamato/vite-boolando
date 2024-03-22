@@ -1,6 +1,20 @@
 <script>
+import Card from './partials/Card.vue'
+import db from '../assets/data/db.json'
   export default {
-    
+    components:{
+      Card
+    },
+
+    data(){
+      return{
+        db
+      }
+    },
+
+    mounted(){
+      console.log(this.db.products);
+    }
   }
 </script>
 
@@ -9,7 +23,12 @@
   <main>
 
     <div class="container d-flex box">
-      <h1>Qui andranno le card...</h1>
+
+      <Card
+        v-for="product in db.products" :key="product.id"
+        :card="product"
+      />
+
     </div>
 
   </main>
@@ -21,7 +40,6 @@
 @use './scss/partial/variables' as *; 
 
   main{
-    min-height: calc(100vh - 220px); //////////////////////////////////debug
     .box{
       margin-top: 70px;
       justify-content: center;
