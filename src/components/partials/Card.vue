@@ -34,7 +34,7 @@
       <img class="main-img" :src="'/src/assets/img/' + card.frontImage" :alt="card.brand">
       <img class="hover-img" :src="'/src/assets/img/' + card.backImage" :alt="card.brand">
       <div class="f-size-small tags">
-        <!-- ciclo i badge al contrario (per ripecchiare boolando originale) -->
+        <!-- ciclo i badge al contrario (per rispecchiare boolando originale) -->
         <div
           v-for="(badge, index) in card.badges.slice().reverse()"
           :key="index"

@@ -21,7 +21,8 @@ import db from '../assets/data/db.json'
     <div class="container d-flex box">
 
       <Card
-        v-for="product in db.products" :key="product.id"
+        v-for="product in db.products" 
+        :key="product.id"
         :card="product"
       />
 
