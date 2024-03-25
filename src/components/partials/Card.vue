@@ -5,6 +5,10 @@
     },
 
     methods:{
+      getPathImage(img){
+        return new URL(`../../assets/img/${img}`, import.meta.url).href
+      },
+
       discountCalc(){
         let p = this.card.price;
         let d;
@@ -31,8 +35,8 @@
   <div class="product">
 
     <div class="product-img">
-      <img class="main-img" :src="'/src/assets/img/' + card.frontImage" :alt="card.brand">
-      <img class="hover-img" :src="'/src/assets/img/' + card.backImage" :alt="card.brand">
+      <img class="main-img" :src="getPathImage(card.frontImage)" :alt="card.brand">
+      <img class="hover-img" :src="getPathImage(card.backImage)" :alt="card.brand">
       <div class="f-size-small tags">
         <!-- ciclo i badge al contrario (per rispecchiare boolando originale) -->
         <div
